@@ -10,5 +10,6 @@ namespace CabManagementSystem.Models
         [StringLength(20)]
         public string LastName { get; set; }
 
+
     }
 }

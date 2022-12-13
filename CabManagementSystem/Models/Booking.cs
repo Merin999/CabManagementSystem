@@ -1,13 +1,15 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CabServiceManagement.Models
 {
-        public enum CarModel
-        {
-            Auto,
-            Sedan,
-            CUV,
-            SUV
-        }
+        //public enum CarModel
+        //{
+        //    Auto,
+        //    Sedan,
+        //    CUV,
+        //    SUV
+        //}
         public enum Location
         {
             Kakkanad,
@@ -38,8 +40,21 @@ namespace CabServiceManagement.Models
             [Required]
             public DateTime Date { get; set; } = DateTime.Now;
 
-            public CarModel CarModel { get; set; }
-        }
-    
+            //public CarModel CarModel { get; set; }
+
+            public bool DriverConfirmed { get; set; } = false;
+
+            public ApplicationUser ApplicationUsers { get; set; }
+             [ForeignKey(nameof(ApplicationUser))]
+            public string UserId { get; set; }
+
+
+            public Driver Drivers { get; set; }
+            [ForeignKey(nameof(Driver))]
+            public string? DriverId { get; set; }
+
+
+    }
+
 }
 

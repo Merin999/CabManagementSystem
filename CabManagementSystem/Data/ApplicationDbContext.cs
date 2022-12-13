@@ -9,6 +9,8 @@ namespace CabManagementSystem.Data
            
            
         }
+
+
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public DbSet<Booking> Bookings { get; set; }

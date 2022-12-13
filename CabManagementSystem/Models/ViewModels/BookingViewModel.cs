@@ -20,7 +20,7 @@ namespace CabManagementSystem.Models.ViewModels
             public DateTime Date { get; set; }
 
 
-            public CarModel CarModel { get; set; }
+            //public CarModel CarModel { get; set; }
 
         
     }

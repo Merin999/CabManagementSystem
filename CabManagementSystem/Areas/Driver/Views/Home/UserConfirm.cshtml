@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Booking>
+@{
+    ViewData["Title"] = "UserConfirm";
+}
+
+<h1>Confirm Booking</h1>
+<br />
+<br />
+<center>
+<div class="table table-success table-striped">
+    @if(Model.Any()){
+        <table >
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Date</th>
+                <th> </th>
+            </tr>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.From</td>
+                    <td>@booking.To</td>
+                    <td>@booking.Date</td>
+
+                    <td><a asp-action="/" asp-route-id="@booking.Id" class="btn btn-primary">Confirm</a></td>
+                        
+                    
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No Bookings were found.           
+        </div>
+    }
+</div>
+</center>

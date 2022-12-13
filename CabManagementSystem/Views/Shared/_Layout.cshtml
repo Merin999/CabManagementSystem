@@ -31,7 +31,15 @@
                             @if(User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
-                                    <a asp-action="Edit" asp-controller="Home" asp-area="Account" class="nav-link text-white">Profile</a>
+                                    <a asp-action="/" asp-controller="Home" asp-area="Account" class="nav-link text-white">Profile</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a asp-action="/" asp-controller="Home" asp-area="Account" class="nav-link text-white">View Users</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a asp-action="/" asp-controller="Home" asp-area="Account" class="nav-link text-white">View Drivers</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -53,21 +61,29 @@
                                 </li>
 
                                 <li class="nav-item">
+                                    <a asp-action="Driver" asp-controller="Home" asp-area="Account" class="nav-link text-white">Available Cabs</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a asp-action="Booking" asp-controller="Home" asp-area="Account" class="nav-link text-white">Booking History</a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a asp-action="Logout" asp-controller="Home" asp-area="Account" class="nav-link text-white">Logout</a>
                                 </li>
                             }
                             else
                             {
                                 <li class="nav-item">
-                                <a asp-action="/" asp-controller="Home" asp-area="Account" class="nav-link text-white">Profile</a>
+                                <a asp-action="DriverEdit" asp-controller="Home" asp-area="Driver" class="nav-link text-white">Profile</a>
                                 </li>
 
-                                <li class="nav-item">
+                                @*<li class="nav-item">
                                     <a asp-action="/" asp-controller="Home" asp-area="Account" class="nav-link text-white">Add Your Cab</a>
-                                </li>
+                                </li>*@
 
                                 <li class="nav-item">
-                                    <a asp-action="/" asp-controller="Home" asp-area="Account" class="nav-link text-white">View Bookings</a>
+                                    <a asp-action="UserConfirm" asp-controller="Home" asp-area="Driver" class="nav-link text-white">Confirm Bookings</a>
                                 </li>
 
                                 <li class="nav-item">

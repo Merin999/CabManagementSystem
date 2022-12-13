@@ -69,7 +69,7 @@ namespace CabManagementSystem.Areas.Account.Controllers
                         return RedirectToAction("Index", "Home", new { Area = "User" });
                     }
 
-                    return RedirectToAction("index", "Home", new { Area = "Driver" });
+                    return RedirectToAction("Index", "Home", new { Area = "?Area=Driver" });
                 }
 
 
@@ -264,8 +264,9 @@ namespace CabManagementSystem.Areas.Account.Controllers
                 To = model.To,
                 From = model.From,
                 Date = model.Date,
-
-            });
+                UserId = userManager.GetUserAsync(User).Result.Id,
+                
+            }); 
             await db.SaveChangesAsync();
 
 
