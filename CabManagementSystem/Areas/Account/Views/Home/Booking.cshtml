@@ -46,7 +46,8 @@
 
 
                 <div class="d-grid mt-4">
-                    <button class="btn btn-primary">Book</button>
+                    @*<button class="btn btn-primary">Book</button>*@
+                    <a asp-action="Index" asp-controller="Home" asp-area="" class="btn btn-primary" onclick="return confirm('Do you want to book the cab?')">Book</a>
                 </div>
 
 

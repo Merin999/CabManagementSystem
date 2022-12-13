@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Booking>
+
+@{
+    ViewData["Title"] = "ViewBookingsAdmin";
+}
+
+<h1>Booking Details</h1>
+
+<br />
+<br />
+<center>
+    <div class="table table-dark table-striped">
+        @if (Model.Any())
+        {
+            <table>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Date</th>
+                    
+                </tr>
+
+                @foreach (var booking in Model)
+                {
+                    <tr>
+                        <td>@booking.From</td>
+                        <td>@booking.To</td>
+                        <td>@booking.Date</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                No Bookings were found.
+            </div>
+        }
+    </div>
+</center>
+

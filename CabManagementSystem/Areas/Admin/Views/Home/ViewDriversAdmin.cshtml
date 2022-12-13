@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Driver>
+
+@{
+    ViewData["Title"] = "ViewDriversAdmin";
+}
+
+<h1>ViewDriverDetailsAdmin</h1>
+
+<br />
+<br />
+<center>
+    <div class="table table-success table-striped">
+        @if (Model.Any())
+        {
+            <table>
+                <tr>
+                    @*<th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>*@
+                    <th>City</th>
+                    <th>LicenceNumber</th>
+                    <th>LicenceValidity</th>
+                    <th>CabType</th>
+                    <th>ModelName</th>
+                    <th>NoOfSeats</th>
+
+                </tr>
+
+                @foreach (var driver in Model)
+                {
+                    <tr>
+                        @*<td>@ApplicationUser.FirstName</td>
+                        <td>@ApplicationUser.LastName</td>
+                        <td>@ApplicationUser.Email</td>*@
+                        <td>@driver.City</td>
+                        <td>@driver.LicenceNumber</td>
+                        <td>@driver.LicenceValidity</td>
+                        <th>@driver.CabType</th>
+                        <th>@driver.ModelName</th>
+                        <th>@driver.NoOfSeats</th>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                No Drivers were Registered.
+            </div>
+        }
+    </div>
+</center>

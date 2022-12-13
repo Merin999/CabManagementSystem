@@ -58,5 +58,46 @@ namespace CabManagementSystem.Areas.Admin.Controllers
         //    ModelState.AddModelError("", "Invalid email / password");
         //    return View(model);
         //}
+
+        [HttpGet]
+        public async Task<IActionResult> ViewBookingsAdmin()
+        {
+            return View(db.Bookings.ToList());
+        }
+
+        //[HttpPost]
+        //public async Task<IActionResult> Confirmation(int id)
+        //{
+        //    var user = await userManager.GetUserAsync(User);
+        //    var cabDriver = await db.Drivers.FirstOrDefaultAsync(m => m.DriverId == user.Id);
+        //    //_db.Bookings.Where(book => book.ApplicationUserId == model.ApplicationUserId).FirstAsync().Result.DriverConfirmed = true;
+        //    //model.DriverId = user.Id;
+        //    //model.DriverConfirmed = true;
+
+        //    var booking = await db.Bookings.FirstOrDefaultAsync(m => m.Id == id);
+
+        //    booking.DriverId = cabDriver.DriverId;
+        //    booking.DriverConfirmed = true;
+        //    //db.Bookings.Where(book => booking.UserId == model.ApplicationUserId).FirstAsync().Result.DriverConfirmed = true;
+        //    await db.SaveChangesAsync();
+        //    return View(user);
+
+        //}
+
+        [HttpGet]
+        public async Task<IActionResult> ViewUsersAdmin()
+        {
+            return View(db.ApplicationUsers.ToList());
+        }
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> ViewDriversAdmin()
+        {
+            return View(db.Drivers.ToList());
+        }
+
+
     }
 }

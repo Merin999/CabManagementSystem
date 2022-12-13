@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "UserConfirm";
 }
-
+<form method="post">
 <h1>Confirm Booking</h1>
 <br />
 <br />
@@ -14,8 +14,9 @@
                 <th>From</th>
                 <th>To</th>
                 <th>Date</th>
-                <th> </th>
+                <th>Status</th>
             </tr>
+                
             @foreach (var booking in Model)
             {
                 <tr>
@@ -23,7 +24,7 @@
                     <td>@booking.To</td>
                     <td>@booking.Date</td>
 
-                    <td><a asp-action="/" asp-route-id="@booking.Id" class="btn btn-primary">Confirm</a></td>
+                    <td><a asp-action="UserConfirmStatus" asp-route-id="@booking.Id" class="btn btn-primary">Confirm</a></td>
                         
                     
                 </tr>
@@ -38,3 +39,4 @@
     }
 </div>
 </center>
+</form>
